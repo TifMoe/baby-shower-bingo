@@ -1,0 +1,88 @@
+:root {
+  --main-bg: #555B6E;
+  --light-font: white;
+  --submit-bg: #BEE3DB;
+  --white-transparent: rgba(255, 255, 255, 0.3);
+}
+
+.App {
+  font-family: system, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  'Lucida Grande';
+  text-align: center;
+  background-color: var(--main-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--light-font);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 18%);
+  grid-auto-rows: 18%;
+  grid-gap: 2.5%;
+  padding: 1%;
+  margin-top: 30px;
+  width: min(90vw, 80vh);
+  height: min(90vw, 80vh);
+}
+
+.grid-container > button {
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  padding: 10%;
+  font-size: 2.75vmin;
+  cursor: pointer;
+}
+
+/* Small */
+@media (max-device-width: 600px) {
+  .grid-container {
+    width: 90vw;
+    height: 90vw;
+  }
+}
+
+/* Medium */
+@media (min-device-width: 600px) and (max-device-width: 1240px) {
+  .grid-container {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: calc(5px + 2vmin);
+}
+
+input[type=text]:focus {
+  outline:0;
+  border: none;
+}
+
+input[type=submit] {
+  background-color: var(--submit-bg);
+  width: 70%;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  font-size: calc(5px + 2vmin);
+  color: var(--main-bg);
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: var(--white-transparent);
+  color: var(--submit-bg);
+  font-weight: bold;
+}
