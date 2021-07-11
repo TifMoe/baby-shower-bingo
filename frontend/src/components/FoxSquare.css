@@ -1,0 +1,18 @@
+.svg-container { 
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    justify-content: center;
+    align-items: top
+}
+
+.svg-content { 
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}

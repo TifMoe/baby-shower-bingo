@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Square from './Square';
+import FoxSquare from './FoxSquare';
 import ClearBoardButton from './ClearBoardButton';
 import { shuffleCards, cardOptions } from "../libs/BoardSetup"
 import { GameContext } from "../libs/GameContext";
@@ -39,6 +40,9 @@ export default function Board() {
             <div className="grid-container">
                 {state.cards.map((card, index) => {
                     console.log(index, card)
+                    if (card.type === 'free') {
+                        return <FoxSquare />
+                    }
                     return (
                         <Square card={card} index={index} />
                     )}
