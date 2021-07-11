@@ -41,7 +41,7 @@ export default {
         return new Response(null, {
           headers: {
               "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
+              "Access-Control-Allow-Methods": "GET, HEAD, POST, PUT, OPTIONS",
               "Access-Control-Allow-Headers": "Content-Type, Client-Key"
           }
         });
@@ -49,7 +49,7 @@ export default {
         // Handle standard OPTIONS request.
         return new Response(null, {
         headers: {
-            Allow: "GET, HEAD, POST, OPTIONS"
+            Allow: "GET, HEAD, POST, PUT, OPTIONS"
         }
         });
     }
@@ -79,7 +79,7 @@ export default {
         const headers = {
           "content-type": "application/json;charset=UTF-8",
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
+          "Access-Control-Allow-Methods": "GET, HEAD, POST, PUT, OPTIONS",
           "Access-Control-Allow-Headers": "Content-Type"
         }
 

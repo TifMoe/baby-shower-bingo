@@ -1,3 +1,5 @@
+import babyWords from '../assets/babyWords.json'
+
 // Fisher Yates Shuffle
 function swap(array, i, j) {
     const temp = array[i];
@@ -29,29 +31,4 @@ function createCardArray(items) {
     return optionsArray
 }
 
-export const cardOptions = [
-    'teething toy',
-    'dummy',
-    'pram',
-    'pacifier',
-    'swaddle',
-    'vest',
-    'growies',
-    'onesie',
-    'bag',
-    'changing pad',
-    'nappies',
-    'burp cloths',
-    'towel',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-    'baby',
-]
+export const cardOptions = babyWords;

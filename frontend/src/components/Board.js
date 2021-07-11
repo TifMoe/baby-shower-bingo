@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Square from './Square';
+import ClearBoardButton from './ClearBoardButton';
 import { shuffleCards, cardOptions } from "../libs/BoardSetup"
 import { GameContext } from "../libs/GameContext";
 import { useFetch } from '../libs/fetchReducer';
@@ -33,8 +34,8 @@ export default function Board() {
     }
 
     return (
-        <div>
-            Hello, {state.name}!
+        <div className="board">
+            <div className="name">Hello, {state.name}!</div>
             <div className="grid-container">
                 {state.cards.map((card, index) => {
                     console.log(index, card)
@@ -43,6 +44,7 @@ export default function Board() {
                     )}
                 )}
             </div>
+            <ClearBoardButton />
         </div>
     )
 }

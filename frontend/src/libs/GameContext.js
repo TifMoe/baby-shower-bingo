@@ -14,10 +14,10 @@ const UPDATE_CARD = "UPDATE_CARD";
 export const reducer = (state = {}, action) => {
   if (action.type === UPDATE_GAME) {
     state = action.payload.state;
-      // POST updated state to API
+      // Send updated state to API
       fetch("https://api.tiffanymoeller.com/moeller-party", {
         headers: {"Content-Type" : "application/json"}, 
-        method: "POST", 
+        method: "PUT", 
         body: JSON.stringify(state)
       });
     return { ...state };
@@ -26,10 +26,10 @@ export const reducer = (state = {}, action) => {
   if (action.type === UPDATE_CARD) {
     let cardIndex = state.cards.findIndex((card => card.id === action.payload.card.id));
     state.cards[cardIndex] = action.payload.card;
-    // POST updated state to API
+    // Send updated state to API
     fetch("https://api.tiffanymoeller.com/moeller-party", {
       headers: {"Content-Type" : "application/json"}, 
-      method: "POST", 
+      method: "PUT", 
       body: JSON.stringify(state)
     });
     return { ...state };

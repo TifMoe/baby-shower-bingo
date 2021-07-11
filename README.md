@@ -22,3 +22,8 @@ You can tail logs by logging into Wrangler and running:
 ```
 wrangler tail --format=pretty
 ```
+
+To deploy:
+```
+wrangler publish
+```
