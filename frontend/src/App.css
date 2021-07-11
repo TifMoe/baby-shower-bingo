@@ -1,8 +1,10 @@
 :root {
-  --main-bg: #555B6E;
+  --main-bg: #092C35;
   --light-font: white;
-  --submit-bg: #BEE3DB;
-  --white-transparent: rgba(255, 255, 255, 0.3);
+  --submit-bg: #eb7933;
+  --accent-warm: #DC4835;
+  --accent-cool: #C0C5C1;
+  --white-transparent: rgba(255, 255, 255, 0.2);
 }
 
 .App {
@@ -88,7 +90,7 @@ input[type=submit]:hover {
 }
 
 .clear {
-  background-color: var(--submit-bg);
+  background-color: var(--white-transparent);
   border: none;
   float: right;
   border-radius: 3px;
@@ -96,8 +98,13 @@ input[type=submit]:hover {
   text-decoration: none;
   margin: 25px 0;
   font-size: calc(2px + 2vmin);
-  color: var(--main-bg);
+  color: var(--light-font);
   cursor: pointer;
+}
+
+.clear:hover {
+  color: var(--submit-bg);
+  font-weight: bold;
 }
 
 .name {

@@ -17,7 +17,7 @@ export function shuffleCards(items) {
     }
 
     // Add "free space" for middle card (12th index)
-    array.splice(12, 0, {type: 'free', open: false});
+    array.splice(12, 0, {type: 'free'});
     return array;
 }
 

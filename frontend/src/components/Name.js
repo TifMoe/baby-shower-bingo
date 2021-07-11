@@ -31,9 +31,20 @@ export default function Name() {
     async function onSubmit(e) {
         e.preventDefault();
         // After they submit their name move to next phase
+        if (!valid(name)) {
+            alert('Please enter a name less than 20 characters!')
+            return 
+        } 
         state.name = name;
         state.phase = 2;
         updateGame(state);
+    }
+
+    function valid(name) {
+        if (!name || name.length > 20) {
+            return false
+        }
+        return true
     }
 
     return (

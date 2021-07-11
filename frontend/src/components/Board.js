@@ -35,7 +35,7 @@ export default function Board() {
 
     return (
         <div className="board">
-            <div className="name">Hello, {state.name}!</div>
+            <div className="name">{capitalizeFirstLetter(state.name)}'s Baby Bingo Board!</div>
             <div className="grid-container">
                 {state.cards.map((card, index) => {
                     console.log(index, card)
@@ -48,3 +48,7 @@ export default function Board() {
         </div>
     )
 }
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }

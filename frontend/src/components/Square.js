@@ -4,8 +4,21 @@ import { GameContext } from "../libs/GameContext";
 export default function Square( {card, index} ) {
     const { updateCard } = useContext(GameContext);
 
-    const CLOSED = {background: '#e9f3f1', font: '#89B0AE'};
-    const OPEN = {background: '#89B0AE', font: '#e9f3f1'};
+    const OPEN = {background: 'var(--accent-cool)', font: 'var(--main-bg)'};
+    const CLOSED = {background: 'var(--white-transparent)', font: 'var(--submit-bg)'};
+    const FREE = {background: 'var(--main-bg)', font: 'var(--light-font)'};
+
+    const cardStyle = () => {
+        if (card.type === 'free') {
+            return FREE
+        }
+
+        if (card.open) {
+            return OPEN
+        }
+
+        return CLOSED
+    }
     
     const onClick = () => {
         // Do nothing on click actions for free space
@@ -19,8 +32,8 @@ export default function Square( {card, index} ) {
     return (
         <button 
             style={{
-                backgroundColor: card.open ? OPEN.background : CLOSED.background,
-                color: card.open ? OPEN.font : CLOSED.font
+                backgroundColor: cardStyle().background,
+                color: cardStyle().font
             }} 
             key={index}
             onClick={onClick}
