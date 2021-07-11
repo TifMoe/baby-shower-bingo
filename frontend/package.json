@@ -12,8 +12,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_WS_SCHEMA=wss REACT_APP_WS_HOST=ws.tiffanymoeller.com react-scripts start",
     "build": "react-scripts build",
+    "deploy-prod": "REACT_APP_WS_SCHEMA=wss REACT_APP_WS_HOST=ws.tiffanymoeller.com npm run build && wrangler publish --env production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

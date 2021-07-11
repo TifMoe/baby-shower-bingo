@@ -1,0 +1,17 @@
+
+name = "baby-bingo-backend"
+# type = "javascript" is required to use the `[build]` section
+type = "javascript"
+workers_dev = false
+account_id = "661484bfa811d50ad0a7c946485ad9ae"
+zone_id = "d53c5683f00e72915fb714532816144a"
+route = "api.tiffanymoeller.com/*"
+
+[build.upload]
+dir = "src"
+# The "modules" upload format is required for all projects that export a Durable Objects class
+format = "modules"
+main = "./index.mjs"
+
+[durable_objects]
+bindings = [{name = "BABYBINGO", class_name = "BabyBingo"}]

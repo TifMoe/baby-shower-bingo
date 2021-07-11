@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GameContext } from "./GameContext";
+import { GameContext } from "../libs/GameContext";
 
 export default function Square( {card, index} ) {
     const { updateCard } = useContext(GameContext);

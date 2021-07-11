@@ -1,33 +1,37 @@
 import React, { useReducer, createContext, useCallback } from "react";
-import { shuffleCards, cardOptions } from "./BoardSetup"
 
 export const GameContext = createContext();
-const board = shuffleCards(cardOptions)
 
 const initialState = {
   phase: 1,
   name: null,
-  cards: board,
+  cards: [],
 };
 
-const NEW_PHASE = "NEW_PHASE";
-const ADD_NAME = "ADD_NAME";
+const UPDATE_GAME = "UPDATE_GAME";
 const UPDATE_CARD = "UPDATE_CARD";
 
 export const reducer = (state = {}, action) => {
-  if (action.type === NEW_PHASE) {
-    state.phase = action.payload.phase;
+  if (action.type === UPDATE_GAME) {
+    state = action.payload.state;
+      // POST updated state to API
+      fetch("https://api.tiffanymoeller.com/moeller-party", {
+        headers: {"Content-Type" : "application/json"}, 
+        method: "POST", 
+        body: JSON.stringify(state)
+      });
     return { ...state };
   }
 
   if (action.type === UPDATE_CARD) {
     let cardIndex = state.cards.findIndex((card => card.id === action.payload.card.id));
     state.cards[cardIndex] = action.payload.card;
-    return { ...state };
-  }
-
-  if (action.type === ADD_NAME) {
-    state.name = action.payload.name;
+    // POST updated state to API
+    fetch("https://api.tiffanymoeller.com/moeller-party", {
+      headers: {"Content-Type" : "application/json"}, 
+      method: "POST", 
+      body: JSON.stringify(state)
+    });
     return { ...state };
   }
 
@@ -35,26 +39,14 @@ export const reducer = (state = {}, action) => {
 };
 
 export const GameContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, (initialState));
 
-  const newPhase = useCallback(
-    (phase) => {
+  const updateGame = useCallback(
+    (state) => {
       dispatch({
-        type: NEW_PHASE,
+        type: UPDATE_GAME,
         payload: {
-          phase,
-        },
-      });
-    },
-    [dispatch]
-  );
-
-  const addName = useCallback(
-    (name) => {
-      dispatch({
-        type: ADD_NAME,
-        payload: {
-          name,
+          state
         },
       });
     },
@@ -75,8 +67,7 @@ export const GameContextProvider = ({ children }) => {
 
   const value = {
     state,
-    newPhase,
-    addName,
+    updateGame,
     updateCard
   };
 

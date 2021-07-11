@@ -1,0 +1,6 @@
+{
+    "name": "durable-objects-websocket-backend",
+    "version": "1.0.0",
+    "description": "Backend for bingo game using Durable Objects",
+    "module": "./index.mjs"
+}
