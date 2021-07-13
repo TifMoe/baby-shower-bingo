@@ -3,15 +3,15 @@
     position: relative;
     width: 100%;
     height: auto;
-    overflow: hidden;
+    overflow: visible;
     justify-content: center;
-    align-items: top
+    align-items: baseline
 }
 
 .svg-content { 
     display: inline-block;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
