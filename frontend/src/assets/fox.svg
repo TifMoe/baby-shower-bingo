@@ -24,19 +24,17 @@
         <path d="M-806.366 1779.264c295.978 63.266 706.766 259.281 1147.14 545.917 20.387 13.27 55.438 17.243 92.938 3.442 267.046-198.32 596.501-375.683 1114.744-414.965C1377.349 1027.183 870.641 517.126 385.653 517.126c-484.988 0-895.348 335.446-1192.019 1262.138z" fill="#E8E8E8"/>
         <path d="M-657.364 1376.081C94.477 882.552 354.53 1229.28 373.967 2100.642c55.652-749.104 278.689-1202.909 1002.114-742.091C1143.155 714.675 683.658 505.44 365.202 505.44c-370.757 0-853.946 308.494-1022.566 870.641z" fill="#E67A3B"/>
         <g id="left-eye">
-            <circle vector-effect="non-scaling-stroke" cx="57.976" cy="1842.777" r="207.668" fill="#5D5D5D"/>
             <circle vector-effect="non-scaling-stroke" cx="57.239" cy="1844.44" r="189.25" fill="#FFF"/>
             <g id="left-pupil">
                 <circle vector-effect="non-scaling-stroke" cx="58.755" cy="1846.592" r="101.077" fill="#5D5D5D"/>
-                <!-- <circle vector-effect="non-scaling-stroke" cx="-10.538" cy="1807.462" r="38.538" fill="#FFF"/> -->
+                <circle vector-effect="non-scaling-stroke" cx="-10.538" cy="1807.462" r="38.538" fill="#FFF"/>
             </g>
         </g>
         <g id="right-eye">
-            <circle vector-effect="non-scaling-stroke" cx="690.457" cy="1854.551" r="207.668" fill="#5D5D5D"/>
             <circle vector-effect="non-scaling-stroke" cx="689.72" cy="1856.214" r="189.25" fill="#FFF"/>
             <g id="right-pupil">
                 <circle vector-effect="non-scaling-stroke" cx="691.236" cy="1858.366" r="101.077" fill="#5D5D5D"/>
-                <!-- <circle vector-effect="non-scaling-stroke" cx="616" cy="1818" r="38.538" fill="#FFF"/> -->
+                <circle vector-effect="non-scaling-stroke" cx="616" cy="1818" r="38.538" fill="#FFF"/>
             </g>
         </g>
         <path id="nose" d="M175.166 2205.509c120.76-46.37 274.33-38.808 410.662 1.371-78.002 57.876-127.695 95.08-162.483 112.435-6.752 3.369-61.375 1.783-66.501 4.114-58.4-47.629-124.09-71.3-181.678-117.92z" fill="#5D5D5D"/>    
