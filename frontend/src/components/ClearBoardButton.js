@@ -5,9 +5,9 @@ import { GameContext } from "../libs/GameContext";
 export default function ClearBoardButton() {
     const { state, updateGame } = useContext(GameContext);
 
-    if (state.phase !==2) {
-        return null;
-    }
+    // if (state.phase !==2) {
+    //     return null;
+    // }
 
     const clearBoard = async () => {
         state.phase = 1;
@@ -17,6 +17,6 @@ export default function ClearBoardButton() {
     }
 
     return (
-        <button className="clear" onClick={clearBoard}>Clear Board</button>
+        <button className="clear" onClick={clearBoard}>New Board</button>
     )
 }

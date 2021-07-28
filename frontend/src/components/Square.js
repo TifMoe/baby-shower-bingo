@@ -4,8 +4,8 @@ import { GameContext } from "../libs/GameContext";
 export default function Square( {card, index} ) {
     const { updateCard } = useContext(GameContext);
 
-    const OPEN = {background: 'var(--accent-cool)', font: 'var(--main-bg)'};
-    const CLOSED = {background: 'var(--white-transparent)', font: 'var(--submit-bg)'};
+    const UNSELECTED = {background: 'var(--accent-cool)', font: 'var(--main-bg)'};
+    const SELECTED = {background: 'var(--white-transparent)', font: 'var(--submit-bg)'};
     const FREE = {background: 'var(--main-bg)', font: 'var(--light-font)'};
 
     const cardStyle = () => {
@@ -13,11 +13,11 @@ export default function Square( {card, index} ) {
             return FREE
         }
 
-        if (card.open) {
-            return OPEN
+        if (card.selected) {
+            return SELECTED
         }
 
-        return CLOSED
+        return UNSELECTED
     }
     
     const onClick = () => {
@@ -25,7 +25,7 @@ export default function Square( {card, index} ) {
         if (card.type === 'free') {
             return
         }
-        card.open = !card.open
+        card.selected = !card.selected
         updateCard(card)
     }
 

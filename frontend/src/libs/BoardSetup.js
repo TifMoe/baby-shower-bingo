@@ -17,7 +17,7 @@ export function shuffleCards(items) {
     }
 
     // Add "free space" for middle card (12th index)
-    array.splice(12, 0, {type: 'free'});
+    array.splice(12, 0, {type: 'free', selected: true});
     return array;
 }
 
@@ -25,7 +25,7 @@ function createCardArray(items) {
     let optionsArray = []
     for (let i of items) {
         let id =  Math.random().toString(36).slice(-10)
-        let card = {id: id, item: i, open: true, type: 'card'}
+        let card = {id: id, item: i, selected: false, type: 'card'}
         optionsArray.push(card)
     }
     return optionsArray

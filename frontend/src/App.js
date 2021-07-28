@@ -1,4 +1,4 @@
-import Name from './components/Name'
+// import Name from './components/Name'
 import Board from './components/Board'
 import { GameContextProvider } from "./libs/GameContext";
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <GameContextProvider>
       <div className="App">
-        <Name />
+        {/* <Name /> */}
         <Board />
       </div>
     </GameContextProvider>

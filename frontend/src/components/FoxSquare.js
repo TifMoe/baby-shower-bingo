@@ -34,9 +34,9 @@ export default function FoxSquare() {
           .to('#left-eye', { scaleY: 0 }, 'close')
           .to('#right-eye', { scaleY: 0 }, 'close')
 
-          .add('open')
-          .to('#left-eye', { scaleY: 1 }, 'open')
-          .to('#right-eye', { scaleY: 1 }, 'open')
+          .add('selected')
+          .to('#left-eye', { scaleY: 1 }, 'selected')
+          .to('#right-eye', { scaleY: 1 }, 'selected')
     }
 
     const twitchEar = () => {

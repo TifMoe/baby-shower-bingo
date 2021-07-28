@@ -1,5 +1,6 @@
 :root {
-  --main-bg: #092C35;
+  --main-bg: #082a33;
+  --lighter-bg: #16434f;
   --light-font: white;
   --submit-bg: #eb7933;
   --accent-warm: #DC4835;
@@ -11,7 +12,7 @@
   font-family: system, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
   'Lucida Grande';
   text-align: center;
-  background-color: var(--main-bg);
+  background-image: linear-gradient(var(--main-bg), var(--lighter-bg));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
